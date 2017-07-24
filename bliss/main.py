@@ -12,7 +12,13 @@ class EntryPage(webapp2.RequestHandler):
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("home.html")
-        self.response.out.write(template.render())
+        relationship_template = jinja_environment.get_template("Relationship.html")
+        if self.request.get('Concern') is 'Relationship':
+            self.response.write(relationship_template.render())
+        else:
+            self.response.write(template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern')}))
 
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
