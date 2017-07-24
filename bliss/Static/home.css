@@ -1,5 +1,5 @@
 h1 {
-  font-family: sans-serif;
+  font-family: 'Homemade Apple', cursive;
   font-size: 70px;
   text-align: center;
 }
@@ -51,8 +51,9 @@ h1 {
 
 
 body{
-  background-image:url("TREES.jpg");
+  background-image:url("sky.jpg");
   background-repeat: no-repeat;
   background-size:cover;
-  border: 5px solid #2EC2B8;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 16px;
 }
