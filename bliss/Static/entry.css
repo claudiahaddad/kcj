@@ -11,13 +11,16 @@ h1 {
   font-weight: normal;
   text-align: center;
   padding: 50px;
+  font-family: 'Didact Gothic', sans-serif;
+
 }
 
 body{
-  background-image:url("TREES.jpg");
+  background-image:url("sky.jpg");
   background-repeat: no-repeat;
   background-size:cover;
-  border: 5px solid #2EC2B8;
+  font-family: 'Didact Gothic', sans-serif;
+
 }
 
 
@@ -28,8 +31,8 @@ body{
   border-color: #000000;
   text-align: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
   position: relative;
-  padding: 25px;
-  margin: 15px;
+  padding: 20px;
+  margin: 10px;
 }
