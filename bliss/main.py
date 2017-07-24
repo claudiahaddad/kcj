@@ -13,7 +13,7 @@ class EntryPage(webapp2.RequestHandler):
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("home.html")
-        self.reponse.out.write(template.render())
+        self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
