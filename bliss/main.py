@@ -97,7 +97,7 @@ class ResultHandler(webapp2.RequestHandler):
     def get(self):
 
         age = self.request.get("age")
-        age = int("age")
+        age = int(age)
         weight = self.request.get("weight")
         weight = int(weight)
 
