@@ -109,9 +109,8 @@ app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
     ("/sleepapp", SleepApp),
-     ('/mh', MainHandler),
-    ("/water_input", NewEventHandler),
+    ('/mh', MainHandler),
+    ("/water", NewEventHandler),
     ("/confirmation", ConfirmationHandler),
     ("/results", ResultHandler)
-], debug=True)
 ], debug=True)
