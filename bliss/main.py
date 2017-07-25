@@ -2,6 +2,8 @@ import jinja2
 import logging
 import os
 import webapp2
+from google.appengine.ext import ndb
+
 
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -47,8 +49,69 @@ class SleepApp(webapp2.RequestHandler):
         'Wake-Up': self.request.get('Wake-Up'),
         }))
 
+class Person(ndb.Model):
+    name = ndb.StringProperty()
+    age = ndb.StringProperty()
+    weight = ndb.StringProperty()
+    height = ndb.StringProperty()
+    gender = ndb.StringProperty()
+
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        query = Person.query()
+        query = query.order(Person.name)
+        people = query.fetch()
+        template = jinja_environment.get_template('templates/facts.html')
+        self.response.write(template.render({"name" : Person}))
+
+class NewEventHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/water_input.html')
+        self.response.write(template.render())
+
+
+class ConfirmationHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/confirmation.html')
+        self.response.write(template.render({
+            "name" : self.request.get("name"),
+            "age" : self.request.get("age"),
+            "weight" : self.request.get("weight"),
+            "height" : self.request.get("height"),
+            "gender" : self.request.get("gender")
+        }))
+class ResultHandler(webapp2.RequestHandler):
+    def get(self):
+
+        age = self.request.get("age")
+        age = int(age)
+        gender = self.request.get("gender")
+        weight = self.request.get("weight")
+        weight = int(weight)
+
+        if age < 30:
+            water =(((weight/2.2) * 40)/ 28.3)
+        elif age < 55 and age >= 30:
+            water = weight / 2.2 * 35 / 28.3
+        elif age > 55:
+            water = weight / 2.2 * 30 / 28.3
+        else:
+            water = ("???")
+
+        template = jinja_environment.get_template('templates/facts.html')
+        self.response.write(template.render({
+            "name" : self.request.get("name"),
+            "water" : "{:.0f}".format(water)
+            }))
+
+
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
-    ("/sleepapp", SleepApp)
+    ("/sleepapp", SleepApp),
+     ('/mh', MainHandler),
+    ("/water_input", NewEventHandler),
+    ("/confirmation", ConfirmationHandler),
+    ("/results", ResultHandler)
+], debug=True)
 ], debug=True)
