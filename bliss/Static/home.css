@@ -42,6 +42,37 @@ h2 {
   background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
 
 }
+
+.Health
+  {
+    background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+    padding-top: 15px;
+  }
+
+.Health2 {
+  background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+  padding-bottom: 0px;
+}
+
+.Career
+  {
+    background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+    padding-top: 15px;
+  }
+
+
+
+.Finance
+  {
+    background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+    padding-top: 15px;
+  }
+
+.Finance2 {
+  background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+  padding-bottom: 0px;
+}
+
 body{
   background-image:url("sky.jpg");
   background-repeat: no-repeat;
