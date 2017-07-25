@@ -122,9 +122,9 @@ class ResultHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
-    ("/sleepapp", SleepApp),
-     ('/mh', MainHandler),
-    ("/water_input", NewEventHandler),
+    ("/sleep", SleepApp),
+    ('/mh', MainHandler),
+    ("/water", NewEventHandler),
     ("/confirmation", ConfirmationHandler),
     ("/results", ResultHandler)
 ], debug = True)
