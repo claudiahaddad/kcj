@@ -6,64 +6,27 @@ h1 {
   margin: 0px
 }
 
+.welcome {
+text-align: center;
+font-style: italic;
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:#E0FFFF;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    font-family: 'Didact Gothic', sans-serif;
-    display:inline;
 
 }
-
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 8px;
     text-decoration: none;
     font-size: 25px;
-    color: #87CEEB;
-    display: block;
+    color: #F0F8FF;
+    display: inline;
     transition: 0.3s;
     font-family: 'Didact Gothic', sans-serif;
+    text-align:center;
+    align-items: center;
 
 }
 
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-    font-family: 'Didact Gothic', sans-serif;
-
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    font-family: 'Didact Gothic', sans-serif;
-
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-span {
-  padding-top: 20px;
-  text-align: left;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+h2 {
+  text-align:center;
 }
 
 
