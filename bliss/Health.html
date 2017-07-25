@@ -45,28 +45,17 @@
         Anxiety may also be sabotaging your confidence, turning your stomach into knots, and impacting your general wellbeing. Learn how to
         squash the uncomfortable consequences of stress and anxiety with these 5 tips....
         <a href ="https://www.psychologytoday.com/blog/finding-cloud9/201308/5-quick-tips-reduce-stress-and-stop-anxiety" > Read More</a></p>
-        <!-- 18-24 age below-->
-    <li style= "list-style-type: none;" ><h3>10 Tips to Stay Healthy in College </h3>
-      <p><div><i> By Kristian Smith - Huffington Post </i> </div>
-        Sometimes, amid classes, studying, homework, meetings and maintaining a social life, college students forget to maintain their health.
-        Though some students may not think they need to worry about healthy habits, developing healthy habits now will make it easier for students
-        to stay healthy throughout their lives. Here are 10 tips for college students to stay healthy....
-        <a href = "http://www.huffingtonpost.com/uloop/10-tips-to-stay-healthy-i_b_859195.html" > Read More </a></p>
-            <!-- 25-54 age below-->
-    <li style= "list-style-type: none;"><h3>4 Secrets to Never Getting Sick </h3>
-      <p><div><i> By Jeannette Moninger - Health </i> </div>
-        Ever wonder why you always seem to come down with a life-interrupting virus this time of year, while other women you know sail through the
-        season sniffle-, cough-, and ache-free? We canvassed the research and talked to top experts to uncover these key, study-backed secrets for
-        staying well, even when you're surrounded by germs. The docs' number one tip: Get the flu vaccine, ASAP. Then, follow these simple steps to
-        boost your virus protection even more....
-        <a href = "http://www.health.com/health/gallery/0,,20532772,00.html" > Read More </a></p>
-          <!-- 55 and older age below-->
-    <li style= "list-style-type: none;"><h3>7 Steps to Healthy Aging, Happy Aging </h3>
-      <p><div><i> By Diana Rodriguez - Everyday Health </i> </div>
-        Getting older involves change, both negative and positive, but you can enjoy aging if you understand what’s going on with your body and take
-        steps to maintain your health.Many different things happen to your body as you age. Your skin, bones, and even brain may start to behave differently.
-        Don't let the changes that come with old age catch you by surprise. Here are some of the common ones....
-        <a href= "http://www.everydayhealth.com/senior-health/understanding/index.aspx" > Read More </a></p>
+{% if Age == "College" %}
+    {% include "collegehealth.html" %}
+    {% elif Age == "Young" %}
+      {% include "younghealth.html" %}
+      {% elif Age == "Middle" %}
+        {% include "younghealth.html" %}
+{% else %}
+  {% include "olduphealth.html" %}
+{% endif %}
 </ul>
+</div>
+
   </body>
   </html>
