@@ -1,0 +1,10 @@
+body{
+  background-image: url("water.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+div{
+  font-size: 25px;
+  color: #EEEEF9;
+}
