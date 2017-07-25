@@ -61,31 +61,29 @@ class MainHandler(webapp2.RequestHandler):
         query = Person.query()
         query = query.order(Person.name)
         people = query.fetch()
-        template = jinja_environment.get_template('templates/facts.html')
+        template = jinja_environment.get_template('facts.html')
         self.response.write(template.render({"name" : Person}))
 
 class NewEventHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/water_input.html')
+        template = jinja_environment.get_template('water.html')
         self.response.write(template.render())
 
 
 class ConfirmationHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/confirmation.html')
+        template = jinja_environment.get_template('confirmation.html')
         self.response.write(template.render({
             "name" : self.request.get("name"),
             "age" : self.request.get("age"),
             "weight" : self.request.get("weight"),
             "height" : self.request.get("height"),
-            "gender" : self.request.get("gender")
         }))
 class ResultHandler(webapp2.RequestHandler):
     def get(self):
 
         age = self.request.get("age")
         age = int(age)
-        gender = self.request.get("gender")
         weight = self.request.get("weight")
         weight = int(weight)
 
@@ -98,7 +96,7 @@ class ResultHandler(webapp2.RequestHandler):
         else:
             water = ("???")
 
-        template = jinja_environment.get_template('templates/facts.html')
+        template = jinja_environment.get_template('facts.html')
         self.response.write(template.render({
             "name" : self.request.get("name"),
             "water" : "{:.0f}".format(water)
