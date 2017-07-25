@@ -13,19 +13,25 @@ class EntryPage(webapp2.RequestHandler):
 class HomePage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("home.html")
-        relationship_template = jinja_environment.get_template("Relationship.html")
-        finance_template = jinja_environment.get_template("Finance.html")
-        health_template = jinja_environment.get_template("Health.html")
+        relationship_template = jinja_environment.get_template("Relationship/Relationship.html")
+        finance_template = jinja_environment.get_template("Finance/Finance.html")
+        health_template = jinja_environment.get_template("Health/Health.html")
         concern_value = self.request.get('Concern')
         logging.info('HomePage handler got concern_value: ' + concern_value)
         if concern_value == "Relationships":
-            self.response.write(relationship_template.render())
+            self.response.write(relationship_template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern')}))
         elif concern_value == "Finance":
             self.response.write(finance_template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern'),
             'Age' : self.request.get("Age")
             }))
         elif concern_value == "Health":
             self.response.write(health_template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern'),
             'Age' : self.request.get("Age")
             }))
         else:

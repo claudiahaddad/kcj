@@ -21,6 +21,8 @@
   <a href="#"> about </a>
 </h2>
 </div>
+<h1> Name Here </h1>
+<h3>Welcome, {{ Name }}!</h3>
 <br>
   <div class="Finance">
     <ul>
@@ -42,13 +44,13 @@
           <a href = "https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/ways-to-save-money" >Read More</a></p>
 </div>
 {% if Age == "Senior" %}
-  {% include "olderfinance.html" %}
+  {% include "Finance/olderfinance.html" %}
   {% elif Age == "Older" %}
-    {% include "olderfinance.html" %}
+    {% include "Finance/olderfinance.html" %}
     {% elif Age == "Old" %}
-      {% include "olderfinance.html" %}
+      {% include "Finance/olderfinance.html" %}
 {% else %}
-  {% include "youngfinance.html" %}
+  {% include "Finance/youngfinance.html" %}
 {% endif %}
 </ul>
 </div>
