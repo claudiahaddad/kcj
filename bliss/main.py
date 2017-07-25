@@ -39,8 +39,16 @@ class HomePage(webapp2.RequestHandler):
             'Name' : self.request.get('Name'),
             'Concern' : self.request.get('Concern')}))
 
+class SleepApp(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template("sleepapp.html")
+        self.response.write(template.render({
+        'Name' : self.request.get('Name'),
+        'Wake-Up': self.request.get('Wake-Up'),
+        }))
 
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
-    ("/home", HomePage)
+    ("/home", HomePage),
+    ("/sleepapp", SleepApp)
 ], debug=True)
