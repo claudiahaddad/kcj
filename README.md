@@ -1,4 +1,1 @@
-
-#keylonnie
-#Claudia
-# Jeremie Osaghae-Nosa
+Google CSSI 2017 Final Project
