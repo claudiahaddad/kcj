@@ -21,7 +21,6 @@
   <a href="#"> about </a>
   </h2>
 </div>
-
 <h4>Welcome, {{ Name }}! </h4>
 <br>
 <div class = "Career">
@@ -40,24 +39,6 @@
         and spare yourself some of the grief. Here are 12 important career lessons that you can benefit from without doing
         it the hard way....
         <a href ="https://www.inc.com/lolly-daskal/12-important-career-lessons-most-people-learn-too-late-in-life.html" >Read More</a></p>
-        <!-- 18-24 -->
-    <li style= "list-style-type: none;" ><h3>4 Secrets Of People Who Always Get The Job Offer </h3>
-      <p><div> <i> By Lynn Andriani - Huffington Post  </i>   </div>
-        It’s a given that, these days, almost any employment search is going to begin online (CareerBuilder’s 2013 Candidate
-        Behavior Study shows that about 80 percent of job seekers use job boards). The truth is, though, that the majority of
-        positions you see posted are already filled, says Nicole Williams, career expert for LinkedIn. Just 18 percent of external
-        hires can be attributed to job boards, according to the recruiting site CareerXroads. Successful candidates use boards to
-        learn about the kinds of roles a company they’re interested in is trying to fill (and what specific skills it’s looking for),
-        Williams says, and then they network to find people they know who work at that company and can help them land an interview....
-        <a href = "http://www.huffingtonpost.com/2014/04/18/job-search-interview-tips_n_5086891.html" >Read More</a></p>
-    <li style= "list-style-type: none;" ><h3>How College Students Should Use Linkedin</h3>
-      <p><div> <i>By David Albrect - Pondering the Classroom  </i>  </div>
-        My day job is being an accounting professor.  I teach financial accounting and cost/managerial accounting in equal measure.
-        This fall, I’ve had the most unusual teaching assignment, a class titled Social Media, Blogging and Business.  Having to teach
-        the class has made me more aware of potential social media uses by students.I recommend that students use Linkedin to professionally
-        present themselves via social media.  Simultaneously, I recommend that students don’t use Facebook (or use Facebook only under a pseudonym)....
-        <a href ="https://accountingprofessor.wordpress.com/2010/12/05/how-college-students-should-use-linkedin/" >Read More </a></p>
-              <!-- everyone else -->
 <li style = "list-style-type: none;" ><h3>16 Mistakes Employees Make When Trying To Get A Promotion</h3>
   <p><div> <i>By Jacquelyn Smith - Forbes </i> </div>
       Asking for a promotion can be one of the most stressful experiences in your career--especially in today's uncertain economy. Why? “Because you
@@ -71,6 +52,24 @@
           If you're lucky to have a job, there are definite times when you should hold off from searching for a new one. But sometimes making a
           change makes sense. If you identify with any of these 10 scenarios, it might be time to plan your exit....
       <a href = "https://money.usnews.com/money/careers/slideshows/the-10-best-times-to-switch-jobs" >Read More</a></p>
+{% if Age == "College" %}
+  {% include "Career/collegecareer.html" %}
+{% else %}
+  {% include "Career/collegecareer.html" %}
+{% endif %}
 </ul>
+</div>
+<div style="text-align:center;"><form action="/home">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+  value="Enter" style="text-align:center;">
+</form></div>
 </body>
 </html>
