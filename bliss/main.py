@@ -9,15 +9,17 @@ jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.di
 
 class EntryPage(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('entry.html')
+        template = jinja_environment.get_template('EntryPage/entry.html')
         self.response.out.write(template.render())
 
 class HomePage(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template("home.html")
+        template = jinja_environment.get_template("Home/home.html")
         relationship_template = jinja_environment.get_template("Relationship/Relationship.html")
         finance_template = jinja_environment.get_template("Finance/Finance.html")
         health_template = jinja_environment.get_template("Health/Health.html")
+        career_template = jinja_environment.get_template("Career/Career.html")
+        school_template = jinja_environment.get_template("School/School.html")
         concern_value = self.request.get('Concern')
         logging.info('HomePage handler got concern_value: ' + concern_value)
         if concern_value == "Relationships":
@@ -36,6 +38,18 @@ class HomePage(webapp2.RequestHandler):
             'Concern' : self.request.get('Concern'),
             'Age' : self.request.get("Age")
             }))
+        elif concern_value == "Career":
+            self.response.write(career_template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern'),
+            'Age' : self.request.get("Age")
+            }))
+        elif concern_value == "School":
+            self.response.write(school_template.render({
+            'Name' : self.request.get('Name'),
+            'Concern' : self.request.get('Concern'),
+            'Age' : self.request.get("Age")
+            }))
         else:
             self.response.write(template.render({
             'Name' : self.request.get('Name'),
@@ -43,7 +57,7 @@ class HomePage(webapp2.RequestHandler):
 
 class SleepApp(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template("sleepapp.html")
+        template = jinja_environment.get_template("Sleep/sleepapp.html")
         self.response.write(template.render({
         'Name' : self.request.get('Name'),
         'Wake-Up': self.request.get('Wake-Up'),
@@ -66,13 +80,13 @@ class MainHandler(webapp2.RequestHandler):
 
 class NewEventHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('water.html')
+        template = jinja_environment.get_template('Water/water.html')
         self.response.write(template.render())
 
 
 class ConfirmationHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('confirmation.html')
+        template = jinja_environment.get_template('Water/confirmation.html')
         self.response.write(template.render({
             "name" : self.request.get("name"),
             "age" : self.request.get("age"),
@@ -83,7 +97,7 @@ class ResultHandler(webapp2.RequestHandler):
     def get(self):
 
         age = self.request.get("age")
-        age = int(age)
+        age = int("age")
         weight = self.request.get("weight")
         weight = int(weight)
 

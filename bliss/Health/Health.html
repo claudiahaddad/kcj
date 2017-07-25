@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src ="Static/home.js"></script>
+  <link rel="stylesheet" href="Static/home.css">
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Allura|Chelsea+Market|Didact+Gothic|Homemade+Apple|Kranky|Nothing+You+Could+Do|Petit+Formal+Script|Rock+Salt');
+</style>
+  <title> Name Here </title>
+</head>
+<body>
+  <h1> Name Here </h1>
+  <div class="sidenav">
+    <h2>
+  <a href="/"> home </a>
+  <a href="#"> music </a>
+  <a href="#"> sleep </a>
+  <a href="#"> water </a>
+  <a href="#"> about </a>
+  </h2>
+</div>
+<h4>Welcome, {{ Name }}! </h4>
+<br>
+<div class="Health">
+  <ul>
+    <li style= "list-style-type: none;" ><h3>8 Ways to Stop Feeling So Exhausted All the Time  </h3>
+      <p><div><i>By Dr.Holly Phillips - Real Simple </i></div>
+        If you can’t seem to keep your eyes open at your desk, you might need more than just one good night’s sleep. While rest is important
+        in combatting fatigue, almost everything you do plays a role in boosting your energy levels—from what you eat, to how you breathe. In
+        her new book, The Exhaustion Breakthrough, general internist Dr. Holly Phillips shares a few easy lifestyle tweaks that can reduce
+        fatigue—or at least help you target the root of the problem....
+        <a href="https://www.realsimple.com/health/preventative-health/sleep/how-to-stop-feeling-tired"> Read More </a></p>
+
+    <li style= "list-style-type: none;" ><h3>9 Ridiculously Simple Ways To Feel Happier Today</h3>
+      <p><div><i>By Catherine Pearson - Huffington Post </i> </div>
+        Happiness, the thinking often goes, is one of those things you either have or don’t have based on some unknown combination of life
+        circumstances and natural disposition. You have a good day at work; someone does something that cracks you up and, voila. Bliss! Rough
+        day at work, someone was a jerk and suddenly you’re miserable.But positive psychologists have long believed that happiness is actually
+        a quality that can be cultivated — a habit, or series of habits that can be practiced....
+        <a href="http://www.huffingtonpost.com/2014/04/03/feel-happier-today_n_5022621.html" >Read More</a></p>
+
+    <li style= "list-style-type: none;" ><h3>5 Quick Tips to Reduce Stress and Stop Anxiety</h3>
+      <p><div><i>By Jamie Long - Psychology Today </i> </div>
+        Like a monster from under the bed, stress and/or anxiety is stealing the peaceful nighttime Zzzzzs of nearly 70 million Americans.
+        Anxiety may also be sabotaging your confidence, turning your stomach into knots, and impacting your general wellbeing. Learn how to
+        squash the uncomfortable consequences of stress and anxiety with these 5 tips....
+        <a href ="https://www.psychologytoday.com/blog/finding-cloud9/201308/5-quick-tips-reduce-stress-and-stop-anxiety" > Read More</a></p>
+{% if Age == "College" %}
+    {% include "Health/collegehealth.html" %}
+    {% elif Age == "Young" %}
+      {% include "Health/younghealth.html" %}
+      {% elif Age == "Middle" %}
+        {% include "Health/younghealth.html" %}
+{% else %}
+  {% include "Health/olduphealth.html" %}
+{% endif %}
+</ul>
+</div>
+<div style="text-align:center;"><form action="/home">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+  value="Enter" style="text-align:center;">
+</form></div>
+  </body>
+  </html>
