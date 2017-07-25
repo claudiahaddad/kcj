@@ -14,11 +14,16 @@ class HomePage(webapp2.RequestHandler):
         template = jinja_environment.get_template("home.html")
         relationship_template = jinja_environment.get_template("Relationship.html")
         if self.request.get('Concern') is 'Relationship':
-            self.response.write(relationship_template.render())
+            self.response.out.write(relationship_template.render())
         else:
             self.response.write(template.render({
             'Name' : self.request.get('Name'),
             'Concern' : self.request.get('Concern')}))
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
