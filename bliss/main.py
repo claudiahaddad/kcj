@@ -24,10 +24,6 @@ class HomePage(webapp2.RequestHandler):
             'Concern' : self.request.get('Concern')}))
 
 
-
-
-
-
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage)
