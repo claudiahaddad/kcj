@@ -113,5 +113,4 @@ app = webapp2.WSGIApplication([
     ("/water_input", NewEventHandler),
     ("/confirmation", ConfirmationHandler),
     ("/results", ResultHandler)
-], debug=True)
-], debug=True)
+], debug = True)
