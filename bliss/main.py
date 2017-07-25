@@ -1,4 +1,5 @@
 import jinja2
+import logging
 import os
 import webapp2
 
@@ -13,8 +14,10 @@ class HomePage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template("home.html")
         relationship_template = jinja_environment.get_template("Relationship.html")
-        if self.request.get('Concern') is 'Relationship':
-            self.response.out.write(relationship_template.render())
+        concern_value = self.request.get('Concern')
+        logging.info('HomePage handler got concern_value: ' + concern_value)
+        if concern_value == "Relationships":
+            self.response.write(relationship_template.render())
         else:
             self.response.write(template.render({
             'Name' : self.request.get('Name'),
