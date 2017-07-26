@@ -22,6 +22,8 @@ h1 {
 h4 {
   text-align: center;
   font-family: 'Didact Gothic', sans-serif;
+  color: white;
+  font-size: 20px;
 }
 
 
@@ -41,7 +43,6 @@ h2 {
     text-align:center;
     align-items: center;
 }
-
 
 
 body{
