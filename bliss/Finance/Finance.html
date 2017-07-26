@@ -15,10 +15,10 @@
   <div class="sidenav">
     <h2>
   <a href="/"> home </a>
-  <a href="#"> music </a>
-  <a href="#"> sleep </a>
-  <a href="#"> water </a>
-  <a href="#"> about </a>
+  <a href="/music"> music </a>
+  <a href="/sleepapp"> sleep </a>
+  <a href="/water"> water </a>
+  <a href="/about"> about </a>
 </h2>
 </div>
 <h4>Welcome, {{ Name }}!</h4>
@@ -53,5 +53,17 @@
 {% endif %}
 </ul>
 </div>
+<div style="text-align:center;"><form action="/home">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+  value="Enter" style="text-align:center;">
+</form></div>
 </body>
 </html>

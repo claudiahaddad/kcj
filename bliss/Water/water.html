@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src ="Static/home.js"></script>
+  <link rel="stylesheet" href="Static/input.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Allura|Chelsea+Market|Didact+Gothic|Homemade+Apple|Kranky|Nothing+You+Could+Do|Petit+Formal+Script|Rock+Salt');
+  </style>
+  <title> Name Here </title>
+</head>
+<body>
+  <h1> Name Here </h1>
+  <div class="sidenav">
+    <h2>
+      <a href="/"> home  </a>
+      <a href="/music"> music </a>
+      <a href="/sleepapp"> sleep </a>
+      <a href="/water"> water </a>
+      <a href="/about"> about </a>
+  </h2>
+</div>
+
+<h4>Welcome, {{ Name }}! </h4>
+<div class = "Water">
+<br>
+<form action = "/results" method="get">
+
+  How old are you?
+  <input type = "text"
+    name="age">
+
+  <br>
+
+  How much do you weigh? (lbs)
+  <input type = "text"
+    name="weight">
+
+
+  <br>
+
+  <input type="submit"
+    value="Next page">
+
+</div>
+</form>
+</body>
+</html>
