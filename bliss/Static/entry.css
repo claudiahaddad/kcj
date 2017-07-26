@@ -55,7 +55,7 @@ h2 {
 .Entry {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: linear-gradient(to top, rgba(153,255,102,0), rgba(153,255,102,1));
+  background: linear-gradient(to bottom, rgba(153,255,102,0.1), rgba(153,255,102,0.9));
   margin-left: 0px;
   margin-right: 0px;
   font-size: 24px;
