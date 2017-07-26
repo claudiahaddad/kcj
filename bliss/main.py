@@ -3,6 +3,9 @@ import logging
 import os
 import webapp2
 from google.appengine.ext import ndb
+from datetime import time
+import datetime
+from datetime import timedelta
 
 
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -60,9 +63,65 @@ class SleepApp(webapp2.RequestHandler):
         template = jinja_environment.get_template("Sleep/sleepapp.html")
         self.response.write(template.render({
         'Name' : self.request.get('Name'),
-        'Wake-Up': self.request.get('Wake-Up'),
+        'time': self.request.get('time'),
         }))
 
+class Bedtime(webapp2.RequestHandler):
+    def get(self):
+        time = self.request.get('time')
+        time = datetime.datetime.strptime(time, '%H:%M %p')
+        time2 = time.strftime('%I:%M')
+        hour, minute = time2.split(":")
+        hour = int(hour)
+        new_hour = hour - 8
+        new_hour2 = hour - 6
+        new_hour3 = hour - 4
+        new_hour4 = hour - 2
+        if new_hour <= 0:
+            new_hour = str(12 + new_hour)
+        else:
+            new_hour = str(new_hour)
+        if new_hour2 <= 0:
+            new_hour2 = str(12 + new_hour2)
+        else:
+            new_hour2 = str(new_hour2)
+        if new_hour3 <= 0:
+            new_hour3 = str(12 + new_hour3)
+        else:
+            new_hour3 = str(new_hour3)
+        if new_hour4 <= 0:
+            new_hour4 = str(12 + new_hour4)
+        else:
+            new_hour4 = str(new_hour4)
+        new_time = ":".join([new_hour, minute])
+        new_time2 = ":".join([new_hour2, minute])
+        new_time3 = ":".join([new_hour3, minute])
+        new_time4 = ":".join([new_hour4, minute])
+        template = jinja_environment.get_template("Sleep/bedtime.html")
+        self.response.write(template.render({
+        'Name' : self.request.get('Name'),
+        'time': self.request.get('time'),
+        'new_time' : new_time,
+        'new_time2' : new_time2,
+        'new_time3' : new_time3,
+        'new_time4' : new_time4
+        }))
+
+
+class Person(ndb.Model):
+    name = ndb.StringProperty()
+    age = ndb.StringProperty()
+    weight = ndb.StringProperty()
+    height = ndb.StringProperty()
+    gender = ndb.StringProperty()
+
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        query = Person.query()
+        query = query.order(Person.name)
+        people = query.fetch()
+        template = jinja_environment.get_template('facts.html')
+        self.response.write(template.render({"name" : Person}))
 
 class NewEventHandler(webapp2.RequestHandler):
     def get(self):
@@ -91,7 +150,7 @@ class ResultHandler(webapp2.RequestHandler):
             "name" : self.request.get("name"),
             "water" : "{:.0f}".format(water)
             }))
-        
+
 class Music(webapp2.RequestHandler):
     def get(self):
         template = env.get_template('music.html')
@@ -101,6 +160,11 @@ app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
     ("/sleepapp", SleepApp),
+<<<<<<< HEAD
+=======
+    ("/bedtime", Bedtime),
+    ('/mh', MainHandler),
+>>>>>>> c0c9b214350408f06653cf8ff2e92864b6a29ff9
     ("/water", NewEventHandler),
     ("/results", ResultHandler),
     ('/Music', Music)

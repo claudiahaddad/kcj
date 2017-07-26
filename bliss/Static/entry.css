@@ -8,10 +8,15 @@ h1 {
 
 }
 
+
+h3 {
+  color: white;
+}
+
 .Quote{
   background-color: #9C0042;
-  font-size: 38px;
-  color: #000000;
+  font-size: 24px;
+  color: white;
   font-weight: normal;
   text-align: center;
   padding: 50px;
@@ -20,33 +25,44 @@ h1 {
 }
 
 body{
-  background-image:url("sky.jpg");
+  background-image:url("trees.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   font-family: 'Didact Gothic', sans-serif;
-  font-size: 16px;
-
+  font-weight: bold;
 }
 
 .sidenav a {
     padding: 0px 8px 8px 8px;
     text-decoration: none;
-    font-size: 20px;
-    color: #F0F8FF;
+    font-size: 22px;
+    color:rgba(153,255,102,1);
+    text-shadow: black 2px 1px;
     display: inline;
     transition: 0.3s;
     font-family: 'Didact Gothic', sans-serif;
     text-align:center;
     align-items: center;
+    font-weight:bold;
 
 }
 
 h2 {
   text-align:center;
+  font-weight: bold;
 }
 
+.Entry {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: linear-gradient(to bottom, rgba(153,255,102,0.1), rgba(153,255,102,0.9));
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 24px;
 
+}
 
+}
 #Enter{
   color: #FFFFFF;
   background-color: #000000;
