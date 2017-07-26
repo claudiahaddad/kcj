@@ -97,7 +97,7 @@ class Bedtime(webapp2.RequestHandler):
         new_time2 = ":".join([new_hour2, minute])
         new_time3 = ":".join([new_hour3, minute])
         new_time4 = ":".join([new_hour4, minute])
-        template = jinja_environment.get_template("bedtime.html")
+        template = jinja_environment.get_template("Sleep/bedtime.html")
         self.response.write(template.render({
         'Name' : self.request.get('Name'),
         'time': self.request.get('time'),
