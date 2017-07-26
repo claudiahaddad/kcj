@@ -77,20 +77,20 @@ class Bedtime(webapp2.RequestHandler):
         new_hour2 = hour - 6
         new_hour3 = hour - 4
         new_hour4 = hour - 2
-        if new_hour == 0:
-            new_hour = str(12)
+        if new_hour <= 0:
+            new_hour = str(12 + new_hour)
         else:
             new_hour = str(new_hour)
-        if new_hour2 == 0:
-            new_hour2 = str(12)
+        if new_hour2 <= 0:
+            new_hour2 = str(12 + new_hour2)
         else:
             new_hour2 = str(new_hour2)
-        if new_hour3 == 0:
-            new_hour3 = str(12)
+        if new_hour3 <= 0:
+            new_hour3 = str(12 + new_hour3)
         else:
             new_hour3 = str(new_hour3)
-        if new_hour4 == 0:
-            new_hour4 = str(12)
+        if new_hour4 <= 0:
+            new_hour4 = str(12 + new_hour4)
         else:
             new_hour4 = str(new_hour4)
         new_time = ":".join([new_hour, minute])
