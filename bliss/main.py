@@ -125,7 +125,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class NewEventHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('Water/water_input.html')
+        template = jinja_environment.get_template('Water/water.html')
         self.response.write(template.render())
 
 
@@ -137,14 +137,12 @@ class ConfirmationHandler(webapp2.RequestHandler):
             "age" : self.request.get("age"),
             "weight" : self.request.get("weight"),
             "height" : self.request.get("height"),
-            "gender" : self.request.get("gender")
         }))
 class ResultHandler(webapp2.RequestHandler):
     def get(self):
 
         age = self.request.get("age")
-        age = int("age")
-        gender = self.request.get("gender")
+        age = int(age)
         weight = self.request.get("weight")
         weight = int(weight)
 
