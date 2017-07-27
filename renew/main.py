@@ -74,21 +74,59 @@ class Bedtime(webapp2.RequestHandler):
     def get(self):
         time = self.request.get('time')
         time = datetime.datetime.strptime(time, '%H:%M %p')
-        time2 = time.strftime('%I:%M')
+        time2 = time.strftime('%I:%M %p')
         hour, minute = time2.split(":")
+        minute, ori_midday = minute.split(" ")
+        logging.info('Midday value is equivalent to: ' + ori_midday)
         hour = int(hour)
-        rem = 12
-        rem2 = 10
-        rem3 = 8
-        rem4 = 6
-        rem5 = 4
-        rem6 = 2
-        new_hour6 = hour - rem
-        new_hour5 = hour - rem2
-        new_hour = hour - rem3
-        new_hour2 = hour - rem4
-        new_hour3 = hour - rem5
-        new_hour4 = hour - rem6
+        if ori_midday == "AM" and hour < 12:
+            midday = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday = "PM"
+        else:
+            midday = "AM"
+        logging.info('Midday1 value is equivalent to: ' + midday)
+        if ori_midday == "AM" and hour < 10:
+            midday1 = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday1 = "PM"
+        else:
+            midday1 = "AM"
+        logging.info('Midday2 value is equivalent to: ' + midday1)
+        if ori_midday == "AM" and hour < 8:
+            midday2 = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday2 = "PM"
+        else:
+            midday2 = "AM"
+        logging.info('Midday3 value is equivalent to: ' + midday2)
+        if ori_midday == "AM" and hour < 6:
+            midday3 = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday3 = "PM"
+        else:
+            midday3 = "AM"
+        logging.info('Midday4 value is equivalent to: ' + midday3)
+        if ori_midday == "AM" and hour < 4:
+            midday4 = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday4 = "PM"
+        else:
+            midday4 = "AM"
+        logging.info('Midday5 value is equivalent to: ' + midday4)
+        if ori_midday == "AM" and hour < 2:
+            midday5 = "PM"
+        elif ori_midday == "AM" and hour == 12:
+            midday5 = "PM"
+        else:
+            midday5 = "AM"
+        logging.info('Midday6 value is equivalent to: ' + midday5)
+        new_hour6 = hour - 12
+        new_hour5 = hour - 10
+        new_hour = hour - 8
+        new_hour2 = hour - 6
+        new_hour3 = hour - 4
+        new_hour4 = hour - 2
         if new_hour6 <= 0:
             new_hour6 = str(12 + new_hour6)
         else:
@@ -119,16 +157,22 @@ class Bedtime(webapp2.RequestHandler):
         new_time4 = ":".join([new_hour4, minute])
         new_time5 = ":".join([new_hour5, minute])
         new_time6 = ":".join([new_hour6, minute])
+        new_time02 = " ".join([new_time, midday])
+        new_time22 = " ".join([new_time2, midday3])
+        new_time32 = " ".join([new_time3, midday4])
+        new_time42 = " ".join([new_time4, midday5])
+        new_time52 = " ".join([new_time5, midday1])
+        new_time62 = " ".join([new_time6, midday])
         template = jinja_environment.get_template("Sleep/bedtime.html")
         self.response.write(template.render({
         'Name' : self.request.get('Name'),
         'time': self.request.get('time'),
-        'new_time' : new_time,
-        'new_time2' : new_time2,
-        'new_time3' : new_time3,
-        'new_time4' : new_time4,
-        'new_time5' : new_time5,
-        'new_time6' : new_time6
+        'new_time02' : new_time02,
+        'new_time22' : new_time22,
+        'new_time32' : new_time32,
+        'new_time42' : new_time42,
+        'new_time52' : new_time52,
+        'new_time62' : new_time62
         }))
 
 
