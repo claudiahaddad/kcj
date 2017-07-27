@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Cutive Mono', monospace;
   font-size: 70px;
   text-align: center;
   padding-top: 0px;
@@ -26,7 +26,7 @@ h2 {
 .sidenav a {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 24px;
     color:rgba(153,255,102,1);
     text-shadow: black 2px 1px;
     display: inline;
@@ -37,51 +37,9 @@ h2 {
 
 }
 
-.Relationships {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-}
-
-.School {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-
-}
-
-.Health
-  {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-    padding-top: 15px;
-  }
-
-.Health2 {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-  padding-bottom: 0px;
-}
-
-.Career
-  {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-    padding-top: 15px;
-  }
-
-
-
-.Finance
-  {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-    padding-top: 15px;
-  }
-
-.Finance2 {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
-  padding-bottom: 0px;
-}
 
 body{
-  background-image:url("trees.jpg");
+  background-image:url("trees2.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   font-family: 'Didact Gothic', sans-serif;
@@ -90,16 +48,17 @@ body{
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 8px;
+    padding: 0px 8px 8px 8px;
     text-decoration: none;
-    font-size: 20px;
-    color:rgba(153,255,102,1);
-    text-shadow: black 2px 1px;
+    font-size: 22px;
+    color: Gold;
     display: inline;
     transition: 0.3s;
     font-family: 'Didact Gothic', sans-serif;
     text-align:center;
     align-items: center;
+    font-weight:bold;
+
 }
 
 
@@ -113,13 +72,13 @@ h3 {
 .sleep {
   text-align: center;
   padding: 15px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,215,0,0.8));
 }
 
 
 ul {
   text-align: center;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(153,255,102,1));
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,215,0,0.8));
   margin: 40px;
   padding: 40px;
 }
