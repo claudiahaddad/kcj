@@ -4,11 +4,19 @@
   text-align: center;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 18px;
-
+}
+section{
+  text-align: left
+}
+container{
+  text-align: center;
 }
 p {
 
   font-size: 18px;
+}
+li{
+  list-style: none;
 }
 h1 {
   font-family: 'Cutive Mono', monospace;
