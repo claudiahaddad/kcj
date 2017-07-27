@@ -11,46 +11,6 @@ from datetime import timedelta
 
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class LoginHandler(webapp2.RequestHandler):
-  def get(self):
-    user = users.get_current_user()
-    template = jinja_environment.get_template('Login.html')
-    # If the user is logged in...
-    if user:
-      email_address = user.nickname()
-      cssi_user = CssiUser.get_by_id(user.user_id())
-      signout_link_html = '<a href="%s">sign out</a>' % (
-          users.create_logout_url('/'))
-      # If the user has previously been to our site, we greet them!
-      if cssi_user:
-        self.response.write('''
-            Welcome %s %s (%s)! <br> %s <br>''' % (
-              cssi_user.first_name,
-              cssi_user.last_name,
-              email_address,
-              signout_link_html))
-      # If the user hasn't been to our site, we ask them to sign up
-      else:
-        self.response.write(template.render())
-    # Otherwise, the user isn't logged in!
-    else:
-      self.response.write('''
-        Please log in to use our site! <br>
-        <a href="%s">Sign in</a>''' % (
-          users.create_login_url('/')))
-
-  def post(self):
-    user = users.get_current_user()
-    if not user:
-      # You shouldn't be able to get here without being logged in
-      self.error(500)
-      return
-    cssi_user = CssiUser(
-        first_name=self.request.get('first_name'),
-        last_name=self.request.get('last_name'),
-        id=user.user_id())
-    cssi_user.put()
-    self.response.write('Thanks for signing up, %s! Your email haas been stored as, %s.' % email_address )
 
 class EntryPage(webapp2.RequestHandler):
     def get(self):
@@ -117,12 +77,18 @@ class Bedtime(webapp2.RequestHandler):
         time2 = time.strftime('%I:%M')
         hour, minute = time2.split(":")
         hour = int(hour)
-        new_hour6 = hour - 12
-        new_hour5 = hour - 10
-        new_hour = hour - 8
-        new_hour2 = hour - 6
-        new_hour3 = hour - 4
-        new_hour4 = hour - 2
+        rem = 12
+        rem2 = 10
+        rem3 = 8
+        rem4 = 6
+        rem5 = 4
+        rem6 = 2
+        new_hour6 = hour - rem
+        new_hour5 = hour - rem2
+        new_hour = hour - rem3
+        new_hour2 = hour - rem4
+        new_hour3 = hour - rem5
+        new_hour4 = hour - rem6
         if new_hour6 <= 0:
             new_hour6 = str(12 + new_hour6)
         else:
