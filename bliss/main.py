@@ -160,11 +160,8 @@ app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
     ("/sleepapp", SleepApp),
-<<<<<<< HEAD
-=======
     ("/bedtime", Bedtime),
     ('/mh', MainHandler),
->>>>>>> c0c9b214350408f06653cf8ff2e92864b6a29ff9
     ("/water", NewEventHandler),
     ("/results", ResultHandler),
     ('/Music', Music)
