@@ -67,9 +67,11 @@
 */
 
 
+
+
 $(document).ready(function() {
 var train_pause = false;
-
+}
 
 
 function toggleVideo(train_pause) {
