@@ -41,4 +41,10 @@ h1{
 
 table{
   background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,215,0,0.8));
+  text-align: center;
+}
+#box{
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
