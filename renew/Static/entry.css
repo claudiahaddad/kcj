@@ -3,7 +3,7 @@ h1 {
   font-size: 70px;
   text-align: center;
   line-height: 5px;
-  margin-top: 100px;
+  margin-top: 70px;
   color: white;
 
 }
@@ -11,6 +11,8 @@ h1 {
 
 h3 {
   color: white;
+  font-size: 20px;
+  margin: 35px;
 }
 
 .Quote{
@@ -82,7 +84,10 @@ h2 {
 .slideshow-container {
   height: 60px;
   position: relative;
-  margin: 55px;
+  margin: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 25px;
 }
 
 .mySlides {
@@ -111,10 +116,10 @@ h2 {
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* On hover, add a black background color with a little bit see-through
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
-}
+}*/
 
 /* Caption text
 .text {
@@ -132,10 +137,9 @@ h2 {
 /* The dots/bullets/indicators */
 .dot {
   cursor:pointer;
-  height: 13px;
-  width: 13px;
+  height: 10px;
+  width: 10px;
   margin: 0 2px;
-  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -148,9 +152,9 @@ h2 {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2.0s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2.0s;
 }
 
 @-webkit-keyframes fade {
