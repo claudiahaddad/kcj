@@ -161,11 +161,11 @@ class ResultHandler(webapp2.RequestHandler):
         weight = int(weight)
 
         if age < 30:
-            water =(((weight/2) * 40)/ 28.3)
+            water =(((weight/2.2) * 40)/ 28.3)
         elif age < 55 and age >= 30:
-            water =(((weight/2) * 35 / 28.3)
+            water = weight /2.2 * 35 / 28.3
         elif age > 55:
-            water = (((weight/2) * 30 / 28.3)
+            water = weight / 2.2 * 30 / 28.3
         else:
             water = ("???")
 
