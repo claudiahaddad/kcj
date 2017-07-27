@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src ="Static/home.js"></script>
+  <link rel="stylesheet" href="Static/home.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Allura|Chelsea+Market|Didact+Gothic|Homemade+Apple|Kranky|Cutive+Mono|Nothing+You+Could+Do|Petit+Formal+Script|Rock+Salt');
+  </style>
+  <title> Name Here </title>
+</head>
+<body>
+  <h1> Name Here </h1>
+  <div class="sidenav">
+    <h2>
+      <a href="/"> home  </a>
+      <a href="/music"> music </a>
+      <a href="/sleepapp"> sleep </a>
+      <a href="/water"> water </a>
+  </h2>
+</div>
+<h4>Welcome, {{ Name }}! </h4>
+<br>
+  <div class = "Career">
+    <ul>
+      <li style= "list-style-type: none;" ><h3>The Incalculable Value of Finding a Job You Love</h3>
+    <p><div><i>By Robert Frank - The New York Times </i> </div>
+      Social scientists have been trying to identify the conditions most likely to promote satisfying human lives.
+      Their findings give some important clues about choosing a career: Money matters, but as the economist Richard
+      Easterlin and others have demonstrated, not always in the ways you may think....
+      <a href = "https://www.nytimes.com/2016/07/24/upshot/first-rule-of-the-job-hunt-find-something-you-love-to-do.html" >Read More</a></p>
+
+  <li style= "list-style-type: none;" ><h3>12 Important Career Lessons Most People Learn Too Late in Life  </h3>
+    <p><div> <i> By Lolly Daskal - Inc. </i>  </div>
+      If there's one thing we all have in common, it's that we all make mistakes along the way (and hopefully learn
+      valuable lessons from them). But if you're smart, you'll learn as much as possible from the mistakes of others
+      and spare yourself some of the grief. Here are 12 important career lessons that you can benefit from without doing
+      it the hard way....
+      <a href ="https://www.inc.com/lolly-daskal/12-important-career-lessons-most-people-learn-too-late-in-life.html" >Read More</a></p>
+{% if Age == "College" %}
+  {% include "Career/collegecareer.html" %}
+{% else %}
+  {% include "Career/oldercareer.html" %}
+{% endif %}
+</ul>
+<div style="text-align:center;"><form action="/home">
+  <input type="hidden" name="Name" value="{{ Name }}">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+  value="Enter" style="text-align:center;">
+</form></div>
+<br>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src ="Static/home.js"></script>
+  <link rel="stylesheet" href="Static/home.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Allura|Chelsea+Market|Didact+Gothic|Homemade+Apple|Kranky|Cutive+Mono|Nothing+You+Could+Do|Petit+Formal+Script|Rock+Salt');
+  </style>
+  <title> Name Here </title>
+</head>
+<body>
+  <h1> Name Here </h1>
+  <div class="sidenav">
+    <h2>
+  <a href="/"> home </a>
+  <a href="/music"> music </a>
+  <a href="/sleepapp"> sleep </a>
+  <a href="/water"> water </a>
+</h2>
+</div>
+<h4>Welcome, {{ Name }}!</h4>
+<br>
+  <div class="Finance">
+    <ul>
+      <li style="list-style-type: none;"><h3>9 Ways To Build Wealth Fast (That Your Financial Advisor Might Not Tell You)</h3>
+        <p> <div><i> By Jeff Rose - Forbes </i></div>
+          Let’s be clear. The point of this article is not to tell you must absolutely invest into a 401(k),
+          Roth IRA, mutual fund, ETF, stock, or other investment. If you want to build wealth fast – like really
+          fast – then investing in a vehicle such as a Roth IRA will not get you there.If you’re younger and your
+          income limits allow, open up a Roth IRA. Invest in mutual funds and ETFs. Make sure you have enough cash
+          in your emergency fund. Starting your life with those good financial habits will bleed over into your success
+          in building wealth. Okay, so how do you build wealth fast? Let’s take a look......
+          <a href= "https://www.forbes.com/sites/jrose/2015/09/30/ways-to-build-wealth-fast-that-your-financial-advisor-wont-tell-you/#1512f166641c" >Read More</a></p>
+      <li style="list-style-type: none;"><h3> 8 Simple Ways to Save Money </h3>
+        <p><div><i> By Bank of America </i> </div>
+          Sometimes the hardest thing about saving money is just getting started. It can be difficult to figure
+          out simple ways to save money and how to use your savings to pursue your financial goals. This step-by-step
+          guide to money-saving habits can help you develop a realistic savings plan....
+          <a href = "https://bettermoneyhabits.bankofamerica.com/en/saving-budgeting/ways-to-save-money" >Read More</a></p>
+{% if Age == "Senior" %}
+  {% include "Finance/olderfinance.html" %}
+  {% elif Age == "Older" %}
+    {% include "Finance/olderfinance.html" %}
+    {% elif Age == "Old" %}
+      {% include "Finance/olderfinance.html" %}
+{% else %}
+  {% include "Finance/youngfinance.html" %}
+{% endif %}
+</ul>
+<div style="text-align:center;"><form action="/home">
+  <input type="hidden" name="Name" value="{{ Name }}">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+  value="Enter" style="text-align:center;">
+</form></div>
+<br>
+</body>
+</html>
