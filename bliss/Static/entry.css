@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Cutive Mono', monospace;
   font-size: 70px;
   text-align: center;
   line-height: 5px;
@@ -25,7 +25,7 @@ h3 {
 }
 
 body{
-  background-image:url("trees.jpg");
+  background-image:url("trees2.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   font-family: 'Didact Gothic', sans-serif;
@@ -35,9 +35,8 @@ body{
 .sidenav a {
     padding: 0px 8px 8px 8px;
     text-decoration: none;
-    font-size: 22px;
-    color:rgba(153,255,102,1);
-    text-shadow: black 2px 1px;
+    font-size: 24px;
+    color: Gold;
     display: inline;
     transition: 0.3s;
     font-family: 'Didact Gothic', sans-serif;
@@ -55,14 +54,14 @@ h2 {
 .Entry {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: linear-gradient(to bottom, rgba(153,255,102,0.1), rgba(153,255,102,0.9));
   margin-left: 0px;
   margin-right: 0px;
-  font-size: 24px;
+  font-size: 28px;
+  text-shadow: black 2px 1px;
+  color: white;
 
 }
 
-}
 #Enter{
   color: #FFFFFF;
   background-color: #000000;
@@ -72,6 +71,6 @@ h2 {
   align-items: center;
   font-size: 20px;
   position: relative;
-  padding: 15px;
+  padding: 10px;
   margin: 10px;
 }
