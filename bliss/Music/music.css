@@ -1,0 +1,22 @@
+.cover{
+  height: 200px;
+  width: 200px;
+  display: inline-flex;
+}
+
+.pause{
+  height: 200px;
+  width: 200px;
+  display: inline-flex;
+}
+
+.video{
+}
+
+button{
+  background-image: image("pause.png");
+}
+#train{
+  height: 200px;
+  width: 200px;
+}

@@ -128,16 +128,6 @@ class NewEventHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('Water/water.html')
         self.response.write(template.render())
 
-
-class ConfirmationHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('Water/confirmation.html')
-        self.response.write(template.render({
-            "name" : self.request.get("name"),
-            "age" : self.request.get("age"),
-            "weight" : self.request.get("weight"),
-            "height" : self.request.get("height"),
-        }))
 class ResultHandler(webapp2.RequestHandler):
     def get(self):
 
@@ -161,14 +151,21 @@ class ResultHandler(webapp2.RequestHandler):
             "water" : "{:.0f}".format(water)
             }))
 
+class Music(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template('music.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', EntryPage),
     ("/home", HomePage),
     ("/sleepapp", SleepApp),
+<<<<<<< HEAD
+=======
     ("/bedtime", Bedtime),
     ('/mh', MainHandler),
+>>>>>>> c0c9b214350408f06653cf8ff2e92864b6a29ff9
     ("/water", NewEventHandler),
-    ("/confirmation", ConfirmationHandler),
-    ("/results", ResultHandler)
-], debug = True)
+    ("/results", ResultHandler),
+    ('/Music', Music)
+], debug=True)
