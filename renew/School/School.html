@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src ="Static/home.js"></script>
+  <link rel="stylesheet" href="Static/home.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Allura|Chelsea+Market|Didact+Gothic|Homemade+Apple|Kranky|Cutive+Mono|Nothing+You+Could+Do|Petit+Formal+Script|Rock+Salt');
+  </style>
+  <title> renew </title>
+</head>
+<body>
+  <h1> renew </h1>
+  <div class="sidenav">
+    <h2>
+      <a href="/"> home  </a>
+      <a href="/music"> music </a>
+      <a href="/sleepapp"> sleep </a>
+      <a href="/water"> water </a>
+  </h2>
+</div>
+
+<h4>Welcome, {{ Name }}! </h4>
+<br>
+<div class = "School">
+<ul>
+  <li style= "list-style-type: none;" ><h3>Your Best Tips for Beating Procrastination</h3>
+    <p><div> <i> By Tim Herrera - The New York Times </i>    </div>
+      Two weeks ago we talked about beating procrastination and getting stuff done. Clearly I still have a lot to learn.
+      But I asked you all for your tips, and hundreds of you emailed or tweeted your best advice for starting tasks and getting
+      across the finish line. (And some of you just wrote in to commiserate, which was lovely. We’re all just trying our best out here.)
+      Many of your tips were fantastic. They were so good, in fact, that I wanted to share a few of my favorites....
+      <a href = "https://www.nytimes.com/2017/07/23/smarter-living/your-best-tips-for-beating-procrastination.html?action=click&contentCollection=upshot&module=NextInCollection&region=Footer&pgtype=article&version=spotlight&rref=collection%2Fspotlight%2Fsmarter-living"  >Read More</a></p>
+
+  <li style= "list-style-type: none;" ><h3>How to Study Smart: 20 Scientific Ways to Learn Faster</h3>
+    <p><div> <i> By Daniel Wong - Duke University </i>    </div>
+      168. That’s how many hours there are in a week. If you’re a student, you probably feel like this isn’t enough. I know …
+      You have so many assignments to do, projects to work on, and tests to study for. Plus, you have other activities and commitments.
+      And I’m sure you want to have a social life, too. Wouldn’t it be nice if you could study smarter (not harder), get good grades, and
+      lead a balanced life? Of course it would. That’s why I wrote this article. The main aim of education isn’t to get straight A’s. But
+      learning how to learn is a vital life skill. So I spent hours scouring scientific articles and research journals to find the best ways to learn more effectively.
+      <a href = "https://www.daniel-wong.com/2015/08/17/study-smart/"    >Read More</a></p>
+
+  <li style= "list-style-type: none;" ><h3>Study Smarter, Not Harder  </h3>
+    <p><div><i>By Nate Kornell - Williams College </i> </div>
+      Good students don't just study harder, they study smarter. A study published this week identifies some habits of successful college students.
+      I'll describe the new study shortly, but first: How should students study? A growing body of cognitive psychology research emphasizes the value of two principles:
+      Principle one is space your studying out over time. If you study something and then study it again right away, it's fresh in your mind the second time. You'll
+      probably feel like you've learned it well. Don't be fooled. Instead of restudying right away, wait a while (e.g., an hour, a day, a week) and then study again.
+      You'll learn far more. Spacing works because when something's fresh in your mind you don't learn much from studying it; you learn more when you've had time to
+      forget it, which allows you to strengthen the memory anew.
+      <a href = "https://www.psychologytoday.com/blog/everybody-is-stupid-except-you/201201/study-smarter-not-harder"      >Read More</a></p>
+  <li style= "list-style-type: none;" ><h3>From professor to lifelong mentor: How to establish the connection   </h3>
+    <p><div><i>Nicole Glass - USA Today College</i> </div>
+      Countless students leave behind years of college without the connection they so strongly wish they had made. The constant visits to their professors’ office
+      hours proved fruitless in establishing a lifelong relationship.Left without a mentor, these students venture into the real world without the guidance of someone
+      they may have looked up to in the classroom.I thought I would be one of those students — until I sent my former journalism professor an email, which led to further
+      emails, phone calls, coffee dates and a position to assist her with research for her next book.
+    <a href = "http://college.usatoday.com/2013/01/24/from-professor-to-lifelong-mentor-how-to-establish-the-connection/"   >Read More</a></p>
+</ul>
+<div style="text-align:center;"><form action="/home">
+  <input type="hidden" name="Name" value="{{ Name }}">
+  Different area of concern?
+  <select name="Concern">
+    <option value="Relationships">Relationships</option>
+    <option value="Health">Health</option>
+    <option value="Finance">Finance</option>
+    <option value="School">School</option>
+    <option value="Career">Career</option>
+  </select>
+  <input id="Enter" type="submit"
+      value="Enter" style="text-align:center;">
+</form></div>
+</body>
+</html>

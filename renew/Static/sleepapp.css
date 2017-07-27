@@ -1,0 +1,88 @@
+h1 {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 70px;
+  text-align: center;
+  padding-top: 0px;
+  line-height: 5px;
+  margin-top: 100px;
+  color:White;
+}
+
+p {
+  font-size: 18px;
+}
+h4 {
+  text-align: center;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+
+h2 {
+  text-align:center;
+  font-size: 20px;
+}
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 24px;
+    color:rgba(153,255,102,1);
+    text-shadow: black 2px 1px;
+    display: inline;
+    transition: 0.3s;
+    font-family: 'Didact Gothic', sans-serif;
+    text-align:center;
+    align-items: center;
+
+}
+
+
+body{
+  background-image:url("trees2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+.sidenav a {
+    padding: 0px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 22px;
+    color: Gold;
+    display: inline;
+    transition: 0.3s;
+    font-family: 'Didact Gothic', sans-serif;
+    text-align:center;
+    align-items: center;
+    font-weight:bold;
+
+}
+
+
+h3 {
+  text-align:center;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+
+.sleep {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,215,0,0.8));
+}
+
+
+ul {
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,215,0,0.8));
+  margin: 40px;
+  padding: 40px;
+}
+
+span {
+  text-align: center;
+}
