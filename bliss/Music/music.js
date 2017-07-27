@@ -98,6 +98,8 @@ function toggleVideo(vid_ispaused, video_name) {
 });
 
 
+
+
 $(document).ready(function() {
 var vid_vid = true;
 
