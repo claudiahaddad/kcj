@@ -2,6 +2,12 @@
   height: 200px;
   width: 200px;
   display: inline-flex;
+  filter: grayscale(100%);
+  margin-left: 55px;
+}
+
+.description{
+  text-align: center;
 }
 
 .pause{
@@ -11,12 +17,19 @@
 }
 
 .video{
+  display: none;
+}
+.line_vid{
+  display:flex;
 }
 
-button{
-  background-image: image("pause.png");
+h1{
+  text-align: center;
 }
-#train{
-  height: 200px;
-  width: 200px;
+
+section{
+  display: inline-flex;
+}
+
+table{
 }
